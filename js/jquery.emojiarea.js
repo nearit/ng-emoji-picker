@@ -50,7 +50,6 @@
 
 	$.fn.emojiarea = function(options) {
 		options = $.extend({}, options);
-		console.log(options);
 		if (options.elemId) {
 			this.push($("#"+options.elemId))
 		}
@@ -637,7 +636,6 @@
   };
 
   EmojiMenu.prototype.show = function(emojiarea) {
-  	console.log(emojiarea)
     /*
      * MODIFICATION: Following line was modified by Igor Zhukov, in order to
      * improve EmojiMenu behaviour
@@ -667,12 +665,9 @@
 	ngEmojiPicker.directive('emojiPicker', ['$parse', function($parse){
 	  return{
 	    link: function(scope, element, attrs){
-	      console.log(attrs)
 	      var emojiAttachmentLocation = attrs["emojiAttachmentLocation"] || "bottom right";
 	      var emojiMenuLocation = attrs["emojiMenuLocation"] || "top left";
 				var elemId = attrs["id"] || null
-	      console.log(emojiAttachmentLocation)
-	      console.log(emojiMenuLocation)
 	      window.emojiPicker = new EmojiPicker({
 	        emojiable_selector: '[emoji-picker="emoji-picker"]',
 	        assetsPath: '/assets/images/ng-emoji-picker',
