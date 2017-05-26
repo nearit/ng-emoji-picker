@@ -678,7 +678,7 @@
 	        assetsPath: '/assets/images/ng-emoji-picker',
 	        popupButtonClasses: 'fa fa-smile-o',
 	        emojiAttachmentLocation: emojiAttachmentLocation ,
-	        emojiMenuLocation: emojiMenuLocation
+	        emojiMenuLocation: emojiMenuLocation,
 					elemId: elemId
 	      });
 	      // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
