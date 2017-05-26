@@ -51,6 +51,9 @@
 	$.fn.emojiarea = function(options) {
 		options = $.extend({}, options);
 		console.log(options);
+		if (options.elemId) {
+			this.push($("#"+options.elemId))
+		}
 		return this
 			.each(function () {
 				var originalInput = $(this);
@@ -667,6 +670,7 @@
 	      console.log(attrs)
 	      var emojiAttachmentLocation = attrs["emojiAttachmentLocation"] || "bottom right";
 	      var emojiMenuLocation = attrs["emojiMenuLocation"] || "top left";
+				var elemId = attrs["id"] || null
 	      console.log(emojiAttachmentLocation)
 	      console.log(emojiMenuLocation)
 	      window.emojiPicker = new EmojiPicker({
@@ -675,6 +679,7 @@
 	        popupButtonClasses: 'fa fa-smile-o',
 	        emojiAttachmentLocation: emojiAttachmentLocation ,
 	        emojiMenuLocation: emojiMenuLocation
+					elemId: elemId
 	      });
 	      // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
 	      // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
