@@ -662,7 +662,7 @@
 
   var ngEmojiPicker = angular.module('ngEmojiPicker', []);
 
-	ngEmojiPicker.directive('emojiPicker', ['$parse', function($parse){
+	ngEmojiPicker.directive('emojiPicker', ['$timeout', function($timeout){
 	  return{
 	    link: function(scope, element, attrs){
 	      var emojiAttachmentLocation = attrs["emojiAttachmentLocation"] || "bottom right";
@@ -679,7 +679,11 @@
 	      // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
 	      // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
 	      // It can be called as many times as necessary; previously converted input fields will not be converted again
-	      window.emojiPicker.discover();
+				$timeout(
+					function() {
+						window.emojiPicker.discover();
+					}
+				)
 	    }
 	  };
 	}])
