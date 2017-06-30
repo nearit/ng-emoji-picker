@@ -668,7 +668,7 @@
 	      var emojiAttachmentLocation = attrs["emojiAttachmentLocation"] || "bottom right";
 	      var emojiMenuLocation = attrs["emojiMenuLocation"] || "top left";
 				var elemId = attrs["id"] || null
-	      window.emojiPicker = new EmojiPicker({
+				let emojiPicker = new EmojiPicker({
 	        emojiable_selector: '[emoji-picker="emoji-picker"]',
 	        assetsPath: '/assets/images/ng-emoji-picker',
 	        popupButtonClasses: 'fa fa-smile-o',
@@ -681,7 +681,7 @@
 	      // It can be called as many times as necessary; previously converted input fields will not be converted again
 				$timeout(
 					function() {
-						window.emojiPicker.discover();
+						emojiPicker.discover()
 					}
 				)
 	    }
