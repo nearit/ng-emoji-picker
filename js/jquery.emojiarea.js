@@ -668,7 +668,7 @@
 	      var emojiAttachmentLocation = attrs["emojiAttachmentLocation"] || "bottom right";
 	      var emojiMenuLocation = attrs["emojiMenuLocation"] || "top left";
 				var elemId = attrs["id"] || null
-				let emojiPicker = new EmojiPicker({
+				var emojiPicker = new EmojiPicker({
 	        emojiable_selector: '[emoji-picker="emoji-picker"]',
 	        assetsPath: '/assets/images/ng-emoji-picker',
 	        popupButtonClasses: 'fa fa-smile-o',
