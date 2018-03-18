@@ -667,11 +667,13 @@
 	    link: function(scope, element, attrs){
 	      var emojiAttachmentLocation = attrs["emojiAttachmentLocation"] || "bottom right";
 	      var emojiMenuLocation = attrs["emojiMenuLocation"] || "top left";
-				var elemId = attrs["id"] || null
+				var elemId = attrs["id"] || null;
+		    		var emojiAssetsPath = attrs["emojiAssetsPath"] || "/assets/images/ng-emoji-picker";
+		    		var emojiPopupButtonClasses = attrs["emojiPopupButtonClasses"] || "fa fa-smile-o";
 				var emojiPicker = new EmojiPicker({
 	        emojiable_selector: '[emoji-picker="emoji-picker"]',
-	        assetsPath: '/assets/images/ng-emoji-picker',
-	        popupButtonClasses: 'fa fa-smile-o',
+	        assetsPath: emojiAssetsPath,
+	        popupButtonClasses: emojiPopupButtonClasses,
 	        emojiAttachmentLocation: emojiAttachmentLocation ,
 	        emojiMenuLocation: emojiMenuLocation,
 					elemId: elemId
